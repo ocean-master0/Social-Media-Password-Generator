@@ -227,7 +227,7 @@ We welcome contributions!
 
 
 # Submit pull request
-```
+
 
 ### ✍️ Code Style
 
@@ -236,25 +236,22 @@ We welcome contributions!
 * 💬 Add comments
 * 🧪 Write tests
 
----
+
 
 ## 👨‍💻 Author
 
 **\[Abhishek Kumar]**
 🐙 GitHub: [@ocean-master0](https://github.com/ocean-master0)
 
----
+
 
 ## 📄 License
 
 This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
 
----
+
 
 ## 🆘 Support
 
 If you find any issues or need help, feel free to [open an issue](https://github.com/ocean-master0/Social-Media-Password-Generator/issues) or contact the maintainer.
-
----
-
 
