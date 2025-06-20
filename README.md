@@ -98,7 +98,7 @@
 
 ### ⚡ Quick Start
 
-
+```bash
 # Clone the Repository
 git clone https://github.com/ocean-master0/Social-Media-Password-Generator.git
 
@@ -116,7 +116,7 @@ pip install -r requirements.txt
 
 # Run the Application
 python app.py
-
+````
 
 📂 Visit: `http://localhost:5000`
 
