@@ -98,7 +98,7 @@
 
 ### ⚡ Quick Start
 
-```bash
+
 # Clone the Repository
 git clone https://github.com/ocean-master0/Social-Media-Password-Generator.git
 
@@ -116,19 +116,12 @@ pip install -r requirements.txt
 
 # Run the Application
 python app.py
-````
+
 
 📂 Visit: `http://localhost:5000`
 
-### 🐳 Docker Installation (Optional)
 
-```bash
-# Build Docker image
-docker build -t password-generator .
 
-# Run container
-docker run -p 5000:5000 password-generator
-```
 
 ---
 
