@@ -13,7 +13,7 @@
 
 ## 🌟 Live Demo
 
-🔗 **[View Live Website](https://your-domain.com/password-generator)**
+🔗 **[View Live Website](https://social-media-password-generator.onrender.com)**
 
 ---
 
