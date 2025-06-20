@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Password Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+</head>
+<body>
+    <div class="container-fluid">
+        <!-- Header -->
+        <header class="text-center py-4 bg-primary text-white">
+            <h1><i class="fas fa-shield-alt"></i> Social Media Password Generator</h1>
+            <p class="lead">Create secure passwords tailored for your favorite platforms</p>
+        </header>
+
+        <div class="container mt-4">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <!-- Main Form -->
+                    <div class="card shadow">
+                        <div class="card-header bg-dark text-white">
+                            <h3><i class="fas fa-cog"></i> Password Configuration</h3>
+                        </div>
+                        <div class="card-body">
+                            <form id="passwordForm">
+                                <!-- Platform Selection -->
+                                <div class="mb-3">
+                                    <label for="platform" class="form-label">
+                                        <i class="fas fa-globe"></i> Select Platform
+                                    </label>
+                                    <select class="form-select" id="platform" onchange="updatePlatformRules()">
+                                        <option value="custom">Custom Settings</option>
+                                        {% for platform in platforms %}
+                                        <option value="{{ platform }}">{{ platform.title() }}</option>
+                                        {% endfor %}
+                                    </select>
+                                    <div class="form-text" id="platformDescription">
+                                        Choose a platform for optimized password requirements
+                                    </div>
+                                </div>
+
+                                <!-- Custom Rules (shown when "Custom" is selected) -->
+                                <div id="customRules" class="border p-3 rounded mb-3">
+                                    <h5><i class="fas fa-sliders-h"></i> Custom Settings</h5>
+                                    
+                                    <!-- Password Length -->
+                                    <div class="mb-3">
+                                        <label for="lengthRange" class="form-label">
+                                            Password Length: <span id="lengthValue">12</span>
+                                        </label>
+                                        <input type="range" class="form-range" id="lengthRange" 
+                                               min="4" max="50" value="12" 
+                                               oninput="updateLengthValue(this.value)">
+                                    </div>
+
+                                    <!-- Character Types -->
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" 
+                                                       id="uppercase" checked>
+                                                <label class="form-check-label" for="uppercase">
+                                                    Uppercase Letters (A-Z)
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" 
+                                                       id="lowercase" checked>
+                                                <label class="form-check-label" for="lowercase">
+                                                    Lowercase Letters (a-z)
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" 
+                                                       id="numbers" checked>
+                                                <label class="form-check-label" for="numbers">
+                                                    Numbers (0-9)
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" 
+                                                       id="symbols" checked>
+                                                <label class="form-check-label" for="symbols">
+                                                    Symbols (!@#$%^&*)
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Difficulty Level -->
+                                    <div class="mb-3">
+                                        <label for="difficulty" class="form-label">
+                                            <i class="fas fa-chart-line"></i> Difficulty Level
+                                        </label>
+                                        <select class="form-select" id="difficulty">
+                                            <option value="easy">Easy (No similar characters)</option>
+                                            <option value="medium" selected>Medium (Balanced)</option>
+                                            <option value="hardest">Hardest (All characters)</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- Platform Rules Display -->
+                                <div id="platformRules" class="alert alert-info" style="display: none;">
+                                    <h6><i class="fas fa-info-circle"></i> Platform Requirements</h6>
+                                    <div id="rulesContent"></div>
+                                </div>
+
+                                <!-- Generate Button -->
+                                <div class="text-center">
+                                    <button type="button" class="btn btn-success btn-lg" 
+                                            onclick="generatePassword()">
+                                        <i class="fas fa-key"></i> Generate Password
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Password Results -->
+                    <div id="passwordResults" class="card shadow mt-4" style="display: none;">
+                        <div class="card-header bg-success text-white">
+                            <h3><i class="fas fa-lock"></i> Your Generated Password</h3>
+                        </div>
+                        <div class="card-body">
+                            <!-- Password Display -->
+                            <div class="mb-3">
+                                <label class="form-label">Generated Password:</label>
+                                <div class="input-group">
+                                    <input type="password" class="form-control form-control-lg" 
+                                           id="generatedPassword" readonly>
+                                    <button class="btn btn-outline-secondary" type="button" 
+                                            onclick="togglePasswordVisibility()">
+                                        <i class="fas fa-eye" id="eyeIcon"></i>
+                                    </button>
+                                    <button class="btn btn-primary" type="button" 
+                                            onclick="copyPassword()">
+                                        <i class="fas fa-copy"></i> Copy
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Strength Meter -->
+                            <div class="mb-3">
+                                <label class="form-label">Password Strength:</label>
+                                <div class="progress mb-2" style="height: 25px;">
+                                    <div class="progress-bar" id="strengthBar" 
+                                         role="progressbar" style="width: 0%">
+                                        <span id="strengthText">0%</span>
+                                    </div>
+                                </div>
+                                <div id="strengthFeedback" class="small text-muted"></div>
+                            </div>
+
+                            <!-- Password Details -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h6><i class="fas fa-info"></i> Details</h6>
+                                            <div id="passwordDetails"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h6><i class="fas fa-shield-alt"></i> Security Info</h6>
+                                            <div id="securityInfo"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Action Buttons -->
+                            <div class="text-center mt-3">
+                                <button class="btn btn-warning me-2" onclick="generatePassword()">
+                                    <i class="fas fa-redo"></i> Generate New
+                                </button>
+                                <button class="btn btn-danger" onclick="downloadPDF()">
+                                    <i class="fas fa-file-pdf"></i> Download PDF
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Security Tips -->
+                    <div class="card shadow mt-4">
+                        <div class="card-header bg-info text-white">
+                            <h3><i class="fas fa-lightbulb"></i> Security Tips</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-check text-success"></i> Use unique passwords for each account</li>
+                                        <li><i class="fas fa-check text-success"></i> Enable two-factor authentication</li>
+                                        <li><i class="fas fa-check text-success"></i> Use a password manager</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-times text-danger"></i> Don't share passwords</li>
+                                        <li><i class="fas fa-times text-danger"></i> Don't use personal information</li>
+                                        <li><i class="fas fa-times text-danger"></i> Don't reuse old passwords</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-dark text-white text-center py-3 mt-5">
+            <p>&copy; 2025 Social Media Password Generator. Your security is our priority.</p>
+        </footer>
+    </div>
+
+    <!-- Toast for notifications -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto">Password Generator</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+            </div>
+            <div class="toast-body" id="toastBody">
+                <!-- Toast message will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/password.js') }}"></script>
+</body>
+</html>

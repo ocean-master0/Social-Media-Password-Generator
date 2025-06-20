@@ -1,0 +1,1692 @@
+/* Futuristic Cyberpunk Password Generator - Revolutionary Design */
+
+/* ========================================
+   CYBERPUNK DESIGN SYSTEM
+======================================== */
+
+:root {
+    /* Cyberpunk Color Palette */
+    --cyber-pink: #ff0080;
+    --cyber-cyan: #00ffff;
+    --cyber-green: #39ff14;
+    --cyber-purple: #8a2be2;
+    --cyber-orange: #ff6600;
+    --cyber-yellow: #ffff00;
+    --cyber-blue: #0080ff;
+    --cyber-red: #ff2020;
+    
+    /* Enhanced Neon Colors */
+    --neon-pink-bright: #ff0080;
+    --neon-pink-dark: #cc0066;
+    --neon-cyan-bright: #00ffff;
+    --neon-cyan-dark: #00cccc;
+    --neon-green-bright: #39ff14;
+    --neon-green-dark: #2ecc10;
+    --neon-purple-bright: #8a2be2;
+    --neon-purple-dark: #6b1eb5;
+    
+    /* Dark Theme Base */
+    --dark-bg-primary: #0a0a0a;
+    --dark-bg-secondary: #1a1a1a;
+    --dark-bg-tertiary: #2a2a2a;
+    --dark-surface: #1e1e1e;
+    --dark-surface-elevated: #2e2e2e;
+    
+    /* Text Colors - Maximum Visibility */
+    --text-neon-white: #ffffff;
+    --text-neon-bright: #f0f0f0;
+    --text-neon-medium: #d0d0d0;
+    --text-neon-dim: #b0b0b0;
+    --text-shadow-neon: #00ffff;
+    --text-glow-pink: #ff0080;
+    --text-glow-green: #39ff14;
+    
+    /* Cyberpunk Gradients */
+    --gradient-cyber-main: linear-gradient(135deg, 
+        var(--cyber-pink) 0%, 
+        var(--cyber-purple) 25%, 
+        var(--cyber-cyan) 50%, 
+        var(--cyber-green) 75%, 
+        var(--cyber-pink) 100%);
+    
+    --gradient-cyber-alt: linear-gradient(45deg,
+        var(--cyber-cyan) 0%,
+        var(--cyber-blue) 25%,
+        var(--cyber-purple) 50%,
+        var(--cyber-pink) 75%,
+        var(--cyber-orange) 100%);
+    
+    --gradient-dark-surface: linear-gradient(145deg,
+        var(--dark-surface) 0%,
+        var(--dark-surface-elevated) 100%);
+    
+    /* Neon Shadows and Glows */
+    --glow-pink: 0 0 20px var(--cyber-pink), 0 0 40px var(--cyber-pink), 0 0 60px var(--cyber-pink);
+    --glow-cyan: 0 0 20px var(--cyber-cyan), 0 0 40px var(--cyber-cyan), 0 0 60px var(--cyber-cyan);
+    --glow-green: 0 0 20px var(--cyber-green), 0 0 40px var(--cyber-green), 0 0 60px var(--cyber-green);
+    --glow-purple: 0 0 20px var(--cyber-purple), 0 0 40px var(--cyber-purple), 0 0 60px var(--cyber-purple);
+    
+    --text-glow-white: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
+    --text-glow-neon-cyan: 0 0 10px var(--cyber-cyan), 0 0 20px var(--cyber-cyan), 0 0 30px var(--cyber-cyan);
+    --text-glow-neon-pink: 0 0 10px var(--cyber-pink), 0 0 20px var(--cyber-pink), 0 0 30px var(--cyber-pink);
+    --text-glow-neon-green: 0 0 10px var(--cyber-green), 0 0 20px var(--cyber-green), 0 0 30px var(--cyber-green);
+    
+    /* Typography - Futuristic */
+    --font-cyber-primary: 'Orbitron', 'Roboto Mono', 'Courier New', monospace;
+    --font-cyber-display: 'Exo 2', 'Orbitron', sans-serif;
+    --font-cyber-mono: 'Source Code Pro', 'Roboto Mono', monospace;
+    
+    /* Font Weights */
+    --weight-light: 300;
+    --weight-normal: 400;
+    --weight-medium: 500;
+    --weight-bold: 700;
+    --weight-black: 900;
+    
+    /* Font Sizes - Responsive */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
+    --text-4xl: 2.5rem;
+    --text-5xl: 3.5rem;
+    
+    /* Spacing System */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+    
+    /* Border Radius */
+    --radius-sm: 0.25rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+    --radius-2xl: 1.5rem;
+    --radius-full: 9999px;
+    
+    /* Animation Timings */
+    --duration-fast: 0.15s;
+    --duration-normal: 0.3s;
+    --duration-slow: 0.5s;
+    --duration-slower: 0.8s;
+    --duration-slowest: 1.2s;
+    
+    /* Easing Functions */
+    --ease-cyber: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --ease-elastic: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
+    /* Z-Index Scale */
+    --z-background: -10;
+    --z-base: 0;
+    --z-elevated: 10;
+    --z-floating: 20;
+    --z-modal: 30;
+    --z-tooltip: 40;
+    --z-maximum: 50;
+}
+
+/* ========================================
+   CYBERPUNK RESET
+======================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+body {
+    font-family: var(--font-cyber-primary);
+    font-size: var(--text-base);
+    font-weight: var(--weight-normal);
+    line-height: 1.6;
+    color: var(--text-neon-white);
+    background: var(--dark-bg-primary);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* ========================================
+   REVOLUTIONARY ANIMATED BACKGROUND
+======================================== */
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 20%, var(--cyber-pink) 0%, transparent 25%),
+        radial-gradient(circle at 80% 20%, var(--cyber-cyan) 0%, transparent 25%),
+        radial-gradient(circle at 20% 80%, var(--cyber-green) 0%, transparent 25%),
+        radial-gradient(circle at 80% 80%, var(--cyber-purple) 0%, transparent 25%),
+        radial-gradient(circle at 50% 50%, var(--cyber-blue) 0%, transparent 30%);
+    background-size: 200% 200%;
+    animation: cyberFlow 20s ease-in-out infinite;
+    opacity: 0.15;
+    z-index: var(--z-background);
+    pointer-events: none;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, 0.05) 25%, rgba(255, 255, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 0.05) 75%, rgba(255, 255, 255, 0.05) 76%, transparent 77%, transparent),
+        linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, 0.05) 25%, rgba(255, 255, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 0.05) 75%, rgba(255, 255, 255, 0.05) 76%, transparent 77%, transparent);
+    background-size: 50px 50px;
+    animation: cyberGrid 10s linear infinite;
+    opacity: 0.3;
+    z-index: var(--z-background);
+    pointer-events: none;
+}
+
+/* Floating Particles Animation */
+.cyber-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: var(--z-background);
+    pointer-events: none;
+}
+
+.cyber-particles::before,
+.cyber-particles::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--cyber-cyan);
+    border-radius: 50%;
+    box-shadow: var(--glow-cyan);
+    animation: floatingParticles 15s linear infinite;
+}
+
+.cyber-particles::before {
+    top: 10%;
+    left: 10%;
+    animation-delay: -2s;
+}
+
+.cyber-particles::after {
+    top: 70%;
+    left: 80%;
+    animation-delay: -8s;
+    background: var(--cyber-pink);
+    box-shadow: var(--glow-pink);
+}
+
+@keyframes cyberFlow {
+    0%, 100% { 
+        background-position: 0% 50%;
+        filter: hue-rotate(0deg);
+    }
+    25% { 
+        background-position: 100% 0%;
+        filter: hue-rotate(90deg);
+    }
+    50% { 
+        background-position: 100% 100%;
+        filter: hue-rotate(180deg);
+    }
+    75% { 
+        background-position: 0% 100%;
+        filter: hue-rotate(270deg);
+    }
+}
+
+@keyframes cyberGrid {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50px, 50px); }
+}
+
+@keyframes floatingParticles {
+    0% {
+        transform: translateY(100vh) translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) translateX(100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* ========================================
+   CYBERPUNK HEADER
+======================================== */
+
+header {
+    background: linear-gradient(135deg, 
+        rgba(10, 10, 10, 0.9) 0%, 
+        rgba(30, 30, 30, 0.8) 100%);
+    backdrop-filter: blur(20px) brightness(1.2);
+    border-bottom: 2px solid var(--cyber-cyan);
+    box-shadow: 
+        0 8px 32px rgba(0, 255, 255, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: var(--z-floating);
+    padding: var(--space-8) 0;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(0, 255, 255, 0.2), 
+        transparent);
+    animation: headerScan 4s ease-in-out infinite;
+}
+
+@keyframes headerScan {
+    0% { left: -100%; }
+    50% { left: 100%; }
+    100% { left: -100%; }
+}
+
+header h1 {
+    font-family: var(--font-cyber-display);
+    font-size: var(--text-5xl);
+    font-weight: var(--weight-black);
+    text-align: center;
+    background: var(--gradient-cyber-main);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: 
+        cyberTextFlow 3s ease-in-out infinite,
+        cyberGlow 2s ease-in-out infinite alternate;
+    position: relative;
+    z-index: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+header h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: var(--gradient-cyber-alt);
+    border-radius: var(--radius-full);
+    animation: cyberUnderline 2s ease-in-out infinite;
+}
+
+header .lead {
+    color: var(--text-neon-bright);
+    font-weight: var(--weight-medium);
+    font-size: var(--text-xl);
+    text-align: center;
+    margin-top: var(--space-4);
+    text-shadow: var(--text-glow-neon-cyan);
+    animation: textPulse 3s ease-in-out infinite;
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes cyberTextFlow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+@keyframes cyberGlow {
+    from { filter: drop-shadow(0 0 20px var(--cyber-cyan)); }
+    to { filter: drop-shadow(0 0 40px var(--cyber-pink)); }
+}
+
+@keyframes cyberUnderline {
+    0%, 100% { 
+        width: 100px;
+        background-position: 0% 50%;
+    }
+    50% { 
+        width: 200px;
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes textPulse {
+    0%, 100% { 
+        text-shadow: var(--text-glow-neon-cyan);
+        transform: scale(1);
+    }
+    50% { 
+        text-shadow: var(--text-glow-neon-pink);
+        transform: scale(1.02);
+    }
+}
+
+/* ========================================
+   CYBERPUNK CARD SYSTEM
+======================================== */
+
+.card {
+    background: linear-gradient(145deg,
+        rgba(30, 30, 30, 0.9) 0%,
+        rgba(20, 20, 20, 0.95) 100%);
+    border: 2px solid var(--cyber-cyan);
+    border-radius: var(--radius-2xl);
+    box-shadow: 
+        var(--glow-cyan),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: all var(--duration-normal) var(--ease-cyber);
+    backdrop-filter: blur(15px) brightness(1.1);
+    z-index: var(--z-elevated);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--gradient-cyber-main);
+    background-size: 200% 100%;
+    animation: cardBorderFlow 3s linear infinite;
+    opacity: 0;
+    transition: opacity var(--duration-normal);
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.1) 0%, transparent 70%);
+    transform: scale(0);
+    transition: transform var(--duration-slower) var(--ease-elastic);
+    z-index: -1;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: var(--cyber-pink);
+    box-shadow: var(--glow-pink);
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card:hover::after {
+    transform: scale(1);
+}
+
+@keyframes cardBorderFlow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.card-header {
+    background: var(--gradient-cyber-main);
+    background-size: 200% 200%;
+    border: none;
+    border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
+    color: var(--text-neon-white);
+    padding: var(--space-6);
+    position: relative;
+    overflow: hidden;
+    animation: headerGradientFlow 8s ease-in-out infinite;
+}
+
+.card-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.3), 
+        transparent);
+    animation: cardHeaderScan 3s infinite;
+}
+
+@keyframes headerGradientFlow {
+    0%, 100% { background-position: 0% 50%; }
+    25% { background-position: 100% 0%; }
+    50% { background-position: 100% 100%; }
+    75% { background-position: 0% 100%; }
+}
+
+@keyframes cardHeaderScan {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.card-header h3 {
+    font-family: var(--font-cyber-display);
+    font-size: var(--text-2xl);
+    font-weight: var(--weight-bold);
+    margin: 0;
+    position: relative;
+    z-index: 1;
+    text-shadow: var(--text-glow-white);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.card-body {
+    padding: var(--space-8);
+    position: relative;
+    background: rgba(20, 20, 20, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+/* Specialized Card Variants */
+.bg-success .card-header {
+    background: linear-gradient(135deg, 
+        var(--cyber-green) 0%, 
+        var(--neon-green-dark) 50%, 
+        var(--cyber-cyan) 100%);
+}
+
+.bg-dark .card-header {
+    background: linear-gradient(135deg, 
+        var(--dark-bg-secondary) 0%, 
+        var(--dark-bg-tertiary) 50%, 
+        var(--cyber-purple) 100%);
+}
+
+.bg-info .card-header {
+    background: linear-gradient(135deg, 
+        var(--cyber-cyan) 0%, 
+        var(--cyber-blue) 50%, 
+        var(--cyber-purple) 100%);
+}
+
+/* ========================================
+   CYBERPUNK FORM ELEMENTS
+======================================== */
+
+.form-label {
+    font-weight: var(--weight-bold);
+    color: var(--text-neon-bright);
+    margin-bottom: var(--space-2);
+    font-size: var(--text-base);
+    display: block;
+    text-shadow: var(--text-glow-neon-cyan);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-family: var(--font-cyber-display);
+}
+
+.form-control,
+.form-select {
+    background: rgba(20, 20, 20, 0.9);
+    border: 2px solid var(--cyber-cyan);
+    border-radius: var(--radius-lg);
+    color: var(--text-neon-white);
+    font-weight: var(--weight-medium);
+    font-size: var(--text-base);
+    padding: var(--space-4);
+    width: 100%;
+    transition: all var(--duration-normal) var(--ease-cyber);
+    box-shadow: 
+        inset 0 2px 4px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(0, 255, 255, 0.2);
+    font-family: var(--font-cyber-mono);
+    backdrop-filter: blur(10px);
+}
+
+.form-control::placeholder {
+    color: var(--text-neon-dim);
+    font-weight: var(--weight-normal);
+    font-style: italic;
+}
+
+.form-control:focus,
+.form-select:focus {
+    outline: none;
+    border-color: var(--cyber-pink);
+    box-shadow: 
+        var(--glow-pink),
+        inset 0 2px 4px rgba(0, 0, 0, 0.3);
+    background: rgba(30, 30, 30, 0.95);
+    color: var(--text-neon-white);
+    text-shadow: var(--text-glow-neon-pink);
+}
+
+.form-control:focus::placeholder {
+    color: var(--text-neon-medium);
+    transform: translateY(-2px);
+}
+
+.form-text {
+    font-size: var(--text-sm);
+    color: var(--text-neon-medium);
+    margin-top: var(--space-2);
+    font-weight: var(--weight-medium);
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+/* ========================================
+   CYBERPUNK BUTTON SYSTEM
+======================================== */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    border: 2px solid var(--cyber-cyan);
+    border-radius: var(--radius-lg);
+    font-family: var(--font-cyber-display);
+    font-weight: var(--weight-bold);
+    font-size: var(--text-base);
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    padding: var(--space-4) var(--space-8);
+    position: relative;
+    overflow: hidden;
+    transition: all var(--duration-normal) var(--ease-cyber);
+    user-select: none;
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    backdrop-filter: blur(10px);
+    text-shadow: var(--text-glow-white);
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all var(--duration-slower) var(--ease-elastic);
+    z-index: -1;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.3), 
+        transparent);
+    transition: left var(--duration-slow) ease;
+    z-index: -1;
+}
+
+.btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: var(--glow-cyan);
+    border-color: var(--cyber-pink);
+}
+
+.btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn:hover::after {
+    left: 100%;
+}
+
+.btn:active {
+    transform: translateY(-1px) scale(1.02);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Button Variants */
+.btn-primary {
+    background: var(--gradient-cyber-main);
+    background-size: 200% 200%;
+    color: var(--text-neon-white);
+    animation: buttonGradientFlow 4s ease-in-out infinite;
+}
+
+.btn-primary:hover {
+    box-shadow: var(--glow-pink);
+    border-color: var(--cyber-pink);
+    color: var(--text-neon-white);
+}
+
+.btn-success {
+    background: linear-gradient(135deg, 
+        var(--cyber-green) 0%, 
+        var(--neon-green-dark) 100%);
+    color: var(--text-neon-white);
+    border-color: var(--cyber-green);
+}
+
+.btn-success:hover {
+    box-shadow: var(--glow-green);
+    border-color: var(--cyber-green);
+    color: var(--text-neon-white);
+}
+
+.btn-warning {
+    background: linear-gradient(135deg, 
+        var(--cyber-orange) 0%, 
+        var(--cyber-yellow) 100%);
+    color: var(--dark-bg-primary);
+    border-color: var(--cyber-orange);
+    text-shadow: none;
+}
+
+.btn-warning:hover {
+    box-shadow: 0 0 20px var(--cyber-orange), 0 0 40px var(--cyber-orange);
+    border-color: var(--cyber-yellow);
+    color: var(--dark-bg-primary);
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, 
+        var(--cyber-red) 0%, 
+        var(--cyber-pink) 100%);
+    color: var(--text-neon-white);
+    border-color: var(--cyber-red);
+}
+
+.btn-danger:hover {
+    box-shadow: 0 0 20px var(--cyber-red), 0 0 40px var(--cyber-red);
+    border-color: var(--cyber-pink);
+    color: var(--text-neon-white);
+}
+
+.btn-outline-secondary {
+    background: transparent;
+    color: var(--text-neon-bright);
+    border-color: var(--text-neon-dim);
+}
+
+.btn-outline-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--cyber-cyan);
+    color: var(--text-neon-white);
+    box-shadow: var(--glow-cyan);
+}
+
+.btn-lg {
+    padding: var(--space-5) var(--space-10);
+    font-size: var(--text-lg);
+    border-radius: var(--radius-xl);
+    font-weight: var(--weight-black);
+}
+
+@keyframes buttonGradientFlow {
+    0%, 100% { background-position: 0% 50%; }
+    25% { background-position: 100% 0%; }
+    50% { background-position: 100% 100%; }
+    75% { background-position: 0% 100%; }
+}
+
+/* ========================================
+   CYBERPUNK PASSWORD INPUT
+======================================== */
+
+#generatedPassword {
+    font-family: var(--font-cyber-mono);
+    font-weight: var(--weight-black);
+    font-size: var(--text-xl);
+    letter-spacing: 0.1em;
+    background: rgba(10, 10, 10, 0.95);
+    border: 3px solid var(--cyber-green);
+    color: var(--text-neon-white);
+    position: relative;
+    transition: all var(--duration-normal) var(--ease-cyber);
+    text-shadow: var(--text-glow-neon-green);
+    box-shadow: 
+        var(--glow-green),
+        inset 0 2px 4px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(15px);
+    text-align: center;
+    animation: passwordGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes passwordGlow {
+    from { 
+        text-shadow: var(--text-glow-neon-green);
+        box-shadow: 
+            var(--glow-green),
+            inset 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    to { 
+        text-shadow: var(--text-glow-neon-cyan);
+        box-shadow: 
+            var(--glow-cyan),
+            inset 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+}
+
+#generatedPassword:focus {
+    border-color: var(--cyber-pink);
+    background: rgba(20, 20, 20, 0.98);
+    color: var(--text-neon-white);
+    text-shadow: var(--text-glow-neon-pink);
+    box-shadow: 
+        var(--glow-pink),
+        inset 0 2px 4px rgba(0, 0, 0, 0.5);
+    animation: none;
+}
+
+.password-visible {
+    background: rgba(30, 30, 30, 0.98) !important;
+    border-color: var(--cyber-yellow) !important;
+    color: var(--text-neon-white) !important;
+    text-shadow: 0 0 10px var(--cyber-yellow), 0 0 20px var(--cyber-yellow) !important;
+    animation: visibilityPulse 1.5s ease-in-out infinite !important;
+}
+
+@keyframes visibilityPulse {
+    0%, 100% { 
+        box-shadow: 0 0 20px var(--cyber-yellow), 0 0 40px var(--cyber-yellow);
+    }
+    50% { 
+        box-shadow: 0 0 30px var(--cyber-yellow), 0 0 60px var(--cyber-yellow);
+    }
+}
+
+.input-group .btn {
+    border-radius: 0;
+    border-left: none;
+    background: rgba(20, 20, 20, 0.9);
+    color: var(--text-neon-white);
+    border-color: var(--cyber-green);
+}
+
+.input-group .btn:last-child {
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+}
+
+.input-group .btn:hover {
+    background: rgba(30, 30, 30, 0.95);
+    color: var(--text-neon-white);
+    box-shadow: var(--glow-cyan);
+}
+
+/* ========================================
+   CYBERPUNK PROGRESS BAR
+======================================== */
+
+.progress {
+    background: rgba(10, 10, 10, 0.8);
+    border: 2px solid var(--cyber-cyan);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    height: 45px;
+    box-shadow: 
+        inset 0 2px 4px rgba(0, 0, 0, 0.5),
+        var(--glow-cyan);
+    position: relative;
+    backdrop-filter: blur(10px);
+}
+
+.progress::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 10px,
+            rgba(0, 255, 255, 0.1) 10px,
+            rgba(0, 255, 255, 0.1) 20px
+        );
+    animation: progressScan 2s linear infinite;
+    z-index: 1;
+    pointer-events: none;
+}
+
+@keyframes progressScan {
+    0% { transform: translateX(-20px); }
+    100% { transform: translateX(0); }
+}
+
+.progress-bar {
+    border-radius: var(--radius-full);
+    font-weight: var(--weight-black);
+    font-size: var(--text-base);
+    color: var(--text-neon-white);
+    text-shadow: var(--text-glow-white);
+    position: relative;
+    overflow: hidden;
+    transition: all var(--duration-slower) var(--ease-cyber);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    z-index: 2;
+    font-family: var(--font-cyber-display);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.progress-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.6) 50%,
+        transparent 100%
+    );
+    animation: progressShine 3s ease-in-out infinite;
+    z-index: 1;
+}
+
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.4);
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+@keyframes progressShine {
+    0% { 
+        left: -100%;
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% { 
+        left: 100%;
+        opacity: 0;
+    }
+}
+
+/* Cyberpunk Strength Levels */
+.strength-very-weak {
+    background: linear-gradient(135deg, var(--cyber-red) 0%, #cc0000 100%);
+    box-shadow: 0 0 25px var(--cyber-red);
+    animation: dangerPulse 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes dangerPulse {
+    from { 
+        box-shadow: 0 0 25px var(--cyber-red);
+        filter: brightness(1);
+    }
+    to { 
+        box-shadow: 0 0 40px var(--cyber-red);
+        filter: brightness(1.2);
+    }
+}
+
+.strength-weak {
+    background: linear-gradient(135deg, var(--cyber-orange) 0%, #ff4400 100%);
+    box-shadow: 0 0 25px var(--cyber-orange);
+}
+
+.strength-medium {
+    background: linear-gradient(135deg, var(--cyber-yellow) 0%, #ffaa00 100%);
+    box-shadow: 0 0 25px var(--cyber-yellow);
+    color: var(--dark-bg-primary);
+    text-shadow: none;
+}
+
+.strength-strong {
+    background: linear-gradient(135deg, var(--cyber-cyan) 0%, var(--cyber-blue) 100%);
+    box-shadow: 0 0 25px var(--cyber-cyan);
+    animation: strongPulse 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes strongPulse {
+    from { 
+        box-shadow: 0 0 25px var(--cyber-cyan);
+        filter: brightness(1);
+    }
+    to { 
+        box-shadow: 0 0 35px var(--cyber-cyan);
+        filter: brightness(1.1);
+    }
+}
+
+.strength-very-strong {
+    background: linear-gradient(135deg, var(--cyber-green) 0%, var(--neon-green-dark) 100%);
+    box-shadow: 0 0 30px var(--cyber-green);
+    animation: ultimatePulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes ultimatePulse {
+    from { 
+        box-shadow: 0 0 30px var(--cyber-green);
+        transform: scaleY(1);
+        filter: brightness(1);
+    }
+    to { 
+        box-shadow: 0 0 50px var(--cyber-green);
+        transform: scaleY(1.05);
+        filter: brightness(1.3);
+    }
+}
+
+.progress-bar span {
+    position: relative;
+    z-index: 3;
+    font-weight: var(--weight-black);
+    animation: textEnhance 2s ease-in-out infinite alternate;
+}
+
+@keyframes textEnhance {
+    from { 
+        text-shadow: var(--text-glow-white);
+    }
+    to { 
+        text-shadow: 
+            var(--text-glow-white),
+            0 0 20px currentColor;
+    }
+}
+
+/* ========================================
+   CYBERPUNK FORM CONTROLS
+======================================== */
+
+.form-range {
+    height: 12px;
+    background: rgba(10, 10, 10, 0.8);
+    border: 2px solid var(--cyber-cyan);
+    border-radius: var(--radius-full);
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 
+        inset 0 2px 4px rgba(0, 0, 0, 0.5),
+        0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+.form-range::-webkit-slider-thumb {
+    appearance: none;
+    height: 32px;
+    width: 32px;
+    background: var(--gradient-cyber-main);
+    background-size: 200% 200%;
+    border: 3px solid var(--cyber-cyan);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: var(--glow-cyan);
+    transition: all var(--duration-normal) var(--ease-bounce);
+    animation: thumbGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes thumbGlow {
+    from { 
+        box-shadow: var(--glow-cyan);
+        background-position: 0% 50%;
+    }
+    to { 
+        box-shadow: var(--glow-pink);
+        background-position: 100% 50%;
+    }
+}
+
+.form-range::-webkit-slider-thumb:hover {
+    transform: scale(1.3);
+    box-shadow: var(--glow-pink);
+    border-color: var(--cyber-pink);
+}
+
+.form-range::-moz-range-thumb {
+    height: 32px;
+    width: 32px;
+    background: var(--gradient-cyber-main);
+    border: 3px solid var(--cyber-cyan);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: var(--glow-cyan);
+}
+
+.form-check-input {
+    width: 2em;
+    height: 2em;
+    border: 3px solid var(--cyber-cyan);
+    border-radius: var(--radius-md);
+    background: rgba(10, 10, 10, 0.8);
+    transition: all var(--duration-normal) var(--ease-cyber);
+    cursor: pointer;
+    box-shadow: 
+        inset 0 2px 4px rgba(0, 0, 0, 0.3),
+        0 0 15px rgba(0, 255, 255, 0.2);
+}
+
+.form-check-input:checked {
+    background: var(--gradient-cyber-main);
+    background-size: 200% 200%;
+    border-color: var(--cyber-green);
+    box-shadow: var(--glow-green);
+    animation: checkboxGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes checkboxGlow {
+    from { 
+        box-shadow: var(--glow-green);
+        background-position: 0% 50%;
+    }
+    to { 
+        box-shadow: var(--glow-cyan);
+        background-position: 100% 50%;
+    }
+}
+
+.form-check-input:focus {
+    box-shadow: var(--glow-pink);
+    border-color: var(--cyber-pink);
+}
+
+.form-check-label {
+    font-weight: var(--weight-bold);
+    color: var(--text-neon-bright);
+    cursor: pointer;
+    font-size: var(--text-base);
+    text-shadow: var(--text-glow-neon-cyan);
+    font-family: var(--font-cyber-display);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+/* ========================================
+   CYBERPUNK ALERTS & NOTIFICATIONS
+======================================== */
+
+.alert {
+    background: rgba(20, 20, 20, 0.9);
+    border: 2px solid var(--cyber-cyan);
+    border-radius: var(--radius-lg);
+    border-left: 6px solid;
+    color: var(--text-neon-white);
+    font-weight: var(--weight-bold);
+    padding: var(--space-4);
+    margin-bottom: var(--space-4);
+    box-shadow: var(--glow-cyan);
+    text-shadow: var(--text-glow-neon-cyan);
+    backdrop-filter: blur(15px);
+    position: relative;
+    overflow: hidden;
+}
+
+.alert::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: currentColor;
+    animation: alertPulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes alertPulse {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+}
+
+.alert-info {
+    border-left-color: var(--cyber-cyan);
+    background: rgba(0, 255, 255, 0.1);
+}
+
+.alert-success {
+    border-left-color: var(--cyber-green);
+    background: rgba(57, 255, 20, 0.1);
+    border-color: var(--cyber-green);
+    box-shadow: var(--glow-green);
+    text-shadow: var(--text-glow-neon-green);
+}
+
+.alert-warning {
+    border-left-color: var(--cyber-orange);
+    background: rgba(255, 102, 0, 0.1);
+    border-color: var(--cyber-orange);
+    box-shadow: 0 0 20px var(--cyber-orange);
+}
+
+.alert-danger {
+    border-left-color: var(--cyber-red);
+    background: rgba(255, 32, 32, 0.1);
+    border-color: var(--cyber-red);
+    box-shadow: 0 0 20px var(--cyber-red);
+}
+
+.toast {
+    background: rgba(20, 20, 20, 0.95);
+    border: 2px solid var(--cyber-cyan);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--glow-cyan);
+    color: var(--text-neon-white);
+    font-weight: var(--weight-bold);
+    backdrop-filter: blur(15px);
+    animation: toastSlideIn var(--duration-normal) var(--ease-bounce);
+    text-shadow: var(--text-glow-neon-cyan);
+}
+
+@keyframes toastSlideIn {
+    from {
+        transform: translateX(100%) scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0) scale(1);
+        opacity: 1;
+    }
+}
+
+.toast-success {
+    border-left: 6px solid var(--cyber-green);
+    box-shadow: var(--glow-green);
+    text-shadow: var(--text-glow-neon-green);
+}
+
+.toast-error {
+    border-left: 6px solid var(--cyber-red);
+    box-shadow: 0 0 20px var(--cyber-red);
+}
+
+.toast-warning {
+    border-left: 6px solid var(--cyber-orange);
+    box-shadow: 0 0 20px var(--cyber-orange);
+}
+
+.toast-info {
+    border-left: 6px solid var(--cyber-cyan);
+    box-shadow: var(--glow-cyan);
+}
+
+/* ========================================
+   CYBERPUNK FOOTER
+======================================== */
+
+footer {
+    background: linear-gradient(135deg, 
+        rgba(10, 10, 10, 0.95) 0%, 
+        rgba(20, 20, 20, 0.95) 100%);
+    backdrop-filter: blur(20px);
+    border-top: 2px solid var(--cyber-purple);
+    color: var(--text-neon-bright);
+    padding: var(--space-8) 0;
+    margin-top: var(--space-16);
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--gradient-cyber-alt);
+    background-size: 200% 100%;
+    animation: footerGlow 4s ease-in-out infinite;
+}
+
+@keyframes footerGlow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+footer p {
+    color: var(--text-neon-bright);
+    text-shadow: var(--text-glow-neon-cyan);
+    font-weight: var(--weight-medium);
+    text-align: center;
+    font-family: var(--font-cyber-display);
+}
+
+/* ========================================
+   CYBERPUNK LOADING STATES
+======================================== */
+
+.loading {
+    position: relative;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    margin: -15px 0 0 -15px;
+    border: 3px solid transparent;
+    border-top: 3px solid var(--cyber-cyan);
+    border-right: 3px solid var(--cyber-pink);
+    border-bottom: 3px solid var(--cyber-green);
+    border-radius: 50%;
+    animation: cyberSpin 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+    box-shadow: var(--glow-cyan);
+}
+
+@keyframes cyberSpin {
+    0% { 
+        transform: rotate(0deg);
+        box-shadow: var(--glow-cyan);
+    }
+    33% {
+        box-shadow: var(--glow-pink);
+    }
+    66% {
+        box-shadow: var(--glow-green);
+    }
+    100% { 
+        transform: rotate(360deg);
+        box-shadow: var(--glow-cyan);
+    }
+}
+
+/* ========================================
+   CYBERPUNK ANIMATIONS
+======================================== */
+
+.fade-in {
+    animation: cyberFadeIn var(--duration-slower) var(--ease-cyber);
+}
+
+@keyframes cyberFadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(30px) scale(0.95);
+        filter: blur(10px);
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+.slide-in {
+    animation: cyberSlideIn var(--duration-normal) var(--ease-bounce);
+}
+
+@keyframes cyberSlideIn {
+    from { transform: translateX(-100%) skewX(-10deg); }
+    to { transform: translateX(0) skewX(0deg); }
+}
+
+/* ========================================
+   CYBERPUNK SCROLLBAR
+======================================== */
+
+::-webkit-scrollbar {
+    width: 14px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark-bg-secondary);
+    border-radius: var(--radius-full);
+    border: 1px solid var(--cyber-cyan);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gradient-cyber-main);
+    background-size: 200% 200%;
+    border-radius: var(--radius-full);
+    border: 2px solid var(--dark-bg-secondary);
+    animation: scrollbarGlow 3s ease-in-out infinite;
+}
+
+@keyframes scrollbarGlow {
+    0%, 100% { 
+        background-position: 0% 50%;
+        box-shadow: 0 0 10px var(--cyber-cyan);
+    }
+    50% { 
+        background-position: 100% 50%;
+        box-shadow: 0 0 15px var(--cyber-pink);
+    }
+}
+
+::-webkit-scrollbar-thumb:hover {
+    box-shadow: var(--glow-pink);
+    animation-duration: 1s;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - CYBERPUNK
+======================================== */
+
+@media (max-width: 768px) {
+    :root {
+        --text-5xl: 2.5rem;
+        --text-4xl: 2rem;
+        --space-8: 1.5rem;
+        --space-6: 1rem;
+    }
+    
+    body {
+        font-size: var(--text-lg);
+    }
+    
+    .card {
+        margin: var(--space-2);
+        border-radius: var(--radius-xl);
+    }
+    
+    .card-body {
+        padding: var(--space-6);
+    }
+    
+    .btn {
+        padding: var(--space-3) var(--space-6);
+        font-size: var(--text-sm);
+    }
+    
+    .progress {
+        height: 40px;
+    }
+    
+    header {
+        padding: var(--space-6) 0;
+    }
+    
+    header h1 {
+        font-size: var(--text-4xl);
+    }
+    
+    header .lead {
+        font-size: var(--text-lg);
+        padding: 0 var(--space-4);
+    }
+    
+    #generatedPassword {
+        font-size: var(--text-lg);
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: var(--text-base);
+    }
+    
+    .btn-lg {
+        padding: var(--space-4) var(--space-8);
+        font-size: var(--text-base);
+    }
+    
+    #generatedPassword {
+        font-size: var(--text-base);
+        letter-spacing: 0.05em;
+    }
+    
+    .form-range::-webkit-slider-thumb {
+        height: 28px;
+        width: 28px;
+    }
+    
+    .form-check-input {
+        width: 1.5em;
+        height: 1.5em;
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY & PREFERENCES
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+@media (prefers-contrast: high) {
+    :root {
+        --text-neon-white: #ffffff;
+        --cyber-cyan: #00ffff;
+        --cyber-pink: #ff0080;
+        --cyber-green: #39ff14;
+    }
+    
+    .card {
+        border-width: 4px;
+    }
+    
+    .form-control,
+    .form-select {
+        border-width: 3px;
+    }
+    
+    #generatedPassword {
+        border-width: 4px;
+        font-weight: var(--weight-black);
+    }
+}
+
+/* ========================================
+   PRINT STYLES - CYBERPUNK
+======================================== */
+
+@media print {
+    body {
+        background: white !important;
+        color: black !important;
+    }
+    
+    .card {
+        border: 3px solid #000 !important;
+        box-shadow: none !important;
+        background: white !important;
+    }
+    
+    .card-header {
+        background: #f0f0f0 !important;
+        color: #000 !important;
+    }
+    
+    .btn {
+        display: none !important;
+    }
+    
+    .progress-bar {
+        background: #000 !important;
+        color: white !important;
+    }
+    
+    #generatedPassword {
+        background: white !important;
+        color: black !important;
+        border: 3px solid #000 !important;
+    }
+    
+    h1, h2, h3, h4, h5, h6, p, span, div {
+        color: #000 !important;
+        text-shadow: none !important;
+    }
+}
+
+/* ========================================
+   CYBERPUNK UTILITY CLASSES
+======================================== */
+
+.cyber-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: var(--z-background);
+    pointer-events: none;
+}
+
+.text-glow-cyan { text-shadow: var(--text-glow-neon-cyan); }
+.text-glow-pink { text-shadow: var(--text-glow-neon-pink); }
+.text-glow-green { text-shadow: var(--text-glow-neon-green); }
+.text-glow-white { text-shadow: var(--text-glow-white); }
+
+.glow-border-cyan { box-shadow: var(--glow-cyan); }
+.glow-border-pink { box-shadow: var(--glow-pink); }
+.glow-border-green { box-shadow: var(--glow-green); }
+.glow-border-purple { box-shadow: var(--glow-purple); }
+
+.cyber-gradient { background: var(--gradient-cyber-main); }
+.cyber-gradient-alt { background: var(--gradient-cyber-alt); }
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.d-none { display: none; }
+.d-block { display: block; }
+.d-flex { display: flex; }
+.d-grid { display: grid; }
+
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.items-center { align-items: center; }
+
+.w-full { width: 100%; }
+.h-full { height: 100%; }
+
+.rounded { border-radius: var(--radius-md); }
+.rounded-lg { border-radius: var(--radius-lg); }
+.rounded-xl { border-radius: var(--radius-xl); }
+.rounded-full { border-radius: var(--radius-full); }
+
+.transition { transition: all var(--duration-normal) var(--ease-cyber); }
+.transition-fast { transition: all var(--duration-fast) var(--ease-cyber); }
+.transition-slow { transition: all var(--duration-slow) var(--ease-cyber); }
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ========================================
+   CYBERPUNK SPECIAL EFFECTS
+======================================== */
+
+.cyberpunk-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.cyberpunk-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.2), 
+        transparent);
+    animation: cyberSweep 2s infinite;
+}
+
+@keyframes cyberSweep {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.neon-box {
+    border: 2px solid var(--cyber-cyan);
+    box-shadow: 
+        var(--glow-cyan),
+        inset 0 0 20px rgba(0, 255, 255, 0.1);
+    background: rgba(0, 255, 255, 0.05);
+}
+
+.hologram {
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+    background-size: 20px 20px;
+    animation: hologramShift 3s linear infinite;
+}
+
+@keyframes hologramShift {
+    0% { background-position: 0 0; }
+    100% { background-position: 20px 20px; }
+}
