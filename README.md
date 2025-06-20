@@ -257,6 +257,4 @@ If you find any issues or need help, feel free to [open an issue](https://github
 
 ---
 
-```
-
 
